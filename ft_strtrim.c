@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybourais <ybourais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/08 15:55:40 by ybourais          #+#    #+#             */
-/*   Updated: 2022/10/22 20:23:26 by ybourais         ###   ########.fr       */
+/*   Created: 2022/10/16 14:55:01 by ybourais          #+#    #+#             */
+/*   Updated: 2022/10/25 21:44:14 by ybourais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	i;
 	char	*str;
+	size_t	i;
+	size_t	j;
 
-	str = (char *)s;
-	i = 0;
-	while (str[i] != c)
+	if (!s1 || !set)
+		return (NULL);
+	else
 	{
-		if (str[i] == '\0')
-			return (NULL);
-		i++;
+		i = 0;
+		while (s1[i] != '\0' && ft_strchr(set, s1[i]) != NULL)
+			i++;
+		j = ft_strlen(s1) - 1;
+		while (j > 0 && ft_strrchr(set, s1[j]) != NULL)
+			j--;
+		str = ft_substr(s1, i, j - i + 1);
+		return (str);
 	}
-	return (str + i);
 }

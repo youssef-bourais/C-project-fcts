@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   1_ft_isalpha.c                                     :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybourais <ybourais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 15:58:01 by ybourais          #+#    #+#             */
-/*   Updated: 2022/10/03 19:34:29 by ybourais         ###   ########.fr       */
+/*   Updated: 2022/10/23 17:11:08 by ybourais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
- #include "libft.h"
- 
-int ft_isalpha(int str)
+int	ft_isalpha(int str)
 {
-    if ((str >= 65 && str <= 90) || (str >= 97 && str <= 122))
-        return 1;
-    return 0; 
+	if ((str >= 65 && str <= 90) || (str >= 97 && str <= 122))
+		return (1);
+	return (0);
 }

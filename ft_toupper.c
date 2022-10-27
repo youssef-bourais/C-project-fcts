@@ -6,15 +6,15 @@
 /*   By: ybourais <ybourais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 21:13:31 by ybourais          #+#    #+#             */
-/*   Updated: 2022/10/05 21:39:29 by ybourais         ###   ########.fr       */
+/*   Updated: 2022/10/23 17:10:46 by ybourais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_toupper(int c)
+int	ft_toupper(int c)
 {
-    if (c >= 'a' && c <= 'z') 
-        c = c - 32;
-    return c;       
+	if (c >= 'a' && c <= 'z')
+		c = c - 32;
+	return (c);
 }

@@ -6,16 +6,15 @@
 /*   By: ybourais <ybourais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 19:05:41 by ybourais          #+#    #+#             */
-/*   Updated: 2022/10/05 21:40:36 by ybourais         ###   ########.fr       */
+/*   Updated: 2022/10/23 17:11:14 by ybourais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
- int ft_isprint(int str)
- {
-     if (str >= 32 && str <= 126)
-        return 1;
-    return 0;
-     
- }      
+int	ft_isprint(int str)
+{
+	if (str >= 32 && str <= 126)
+		return (1);
+	return (0);
+}

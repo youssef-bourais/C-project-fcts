@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybourais <ybourais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/08 15:55:40 by ybourais          #+#    #+#             */
-/*   Updated: 2022/10/22 20:23:26 by ybourais         ###   ########.fr       */
+/*   Created: 2022/10/15 19:52:18 by ybourais          #+#    #+#             */
+/*   Updated: 2022/10/26 19:34:37 by ybourais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	i;
 	char	*str;
 
-	str = (char *)s;
-	i = 0;
-	while (str[i] != c)
+	if (!s1 || !s2)
+		return (NULL);
+	str = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2)) + 1);
+	if (!str)
+		return (NULL);
+	else
 	{
-		if (str[i] == '\0')
-			return (NULL);
-		i++;
+		ft_memcpy(str, s1, ft_strlen(s1));
+		ft_memcpy(str + ft_strlen(s1), s2, ft_strlen(s2));
 	}
-	return (str + i);
+	str[ft_strlen(s1) + ft_strlen(s2)] = '\0';
+	return (str);
 }

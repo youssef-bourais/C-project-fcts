@@ -1,4 +1,3 @@
-
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -7,21 +6,23 @@
 /*   By: ybourais <ybourais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 12:38:20 by ybourais          #+#    #+#             */
-/*   Updated: 2022/10/05 12:38:21 by ybourais         ###   ########.fr       */
+/*   Updated: 2022/10/23 17:09:07 by ybourais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_bzero(void *s ,size_t n)
+void	*ft_bzero(void *s, size_t n)
 {
-    int i;
-    char *p=(char *)s;
-    i = 0;
-    while (i < (int)n)
-    {
-        p[i] = '\0';
-        i ++;
-    }
-    return s;
-} 
+	int		i;
+	char	*p;
+
+	p = (char *)s;
+	i = 0;
+	while (i < (int)n)
+	{
+		p[i] = '\0';
+		i++;
+	}
+	return (s);
+}

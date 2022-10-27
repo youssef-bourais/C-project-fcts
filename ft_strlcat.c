@@ -6,34 +6,30 @@
 /*   By: ybourais <ybourais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 19:23:57 by ybourais          #+#    #+#             */
-/*   Updated: 2022/10/08 15:32:09 by ybourais         ###   ########.fr       */
+/*   Updated: 2022/10/24 23:12:21 by ybourais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_strlcat(char *dst, const char *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t Slen = ft_strlen(src);
+	size_t	slen;
+	size_t	dlen;
+	size_t	i;
 
-	if ((dst == (void*)0 && size == 0) || size == 0)
-		return Slen;
-
-	size_t Dlen = ft_strlen(dst);
-	size_t i;
-
-	if (!dst && !size)
-		return 0;
-
-	if (Dlen >= size)
-		return (Slen + size);
-
+	slen = ft_strlen(src);
+	if (!size)
+		return (slen);
+	dlen = ft_strlen(dst);
+	if (dlen >= size)
+		return (slen + size);
 	i = 0;
-	while (src[i] != '\0' && i < size - Dlen - 1)
+	while (src[i] != '\0' && i < size - dlen - 1)
 	{
-		dst [Dlen + i] = src[i];
-		i ++;
+		dst[dlen + i] = src[i];
+		i++;
 	}
-	dst [Dlen + i] = '\0';
-	return (Slen + Dlen);	
+	dst[dlen + i] = '\0';
+	return (slen + dlen);
 }
